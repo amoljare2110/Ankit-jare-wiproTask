@@ -2,6 +2,7 @@ package com.ankit.jare.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import com.ankit.jare.model.ListRepository
+import com.ankit.jare.model.ListResponse
 import com.ankit.jare.model.rows
 
 class RepoListViewModel : BaseViewModel() {

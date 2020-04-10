@@ -76,7 +76,7 @@ class ListFragment : Fragment() {
         itemsswipetorefresh.isRefreshing = false
     }
 
-    // setting your adapter dat
+    // setting your adapter data
     private fun setupAdapter() {
         val viewModel = viewDataBinding.viewmodel
         if (viewModel != null) {
