@@ -1,4 +1,4 @@
-package com.ankit.jare.view.utils
+package com.ankit.jare.utils
 
 import android.content.Context
 import android.net.ConnectivityManager

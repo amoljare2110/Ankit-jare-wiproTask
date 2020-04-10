@@ -1,4 +1,4 @@
-package com.ankit.jare.view.utils
+package com.ankit.jare.utils
 
 class Constants {
     companion object {

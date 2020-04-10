@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ankit.jare.databinding.FragmentRepoListBinding
 import com.ankit.jare.view.adapter.ListAdapter
-import com.ankit.jare.view.utils.NetworkConnecitity
+import com.ankit.jare.utils.NetworkConnecitity
 import com.ankit.jare.viewmodel.RepoListViewModel
 import kotlinx.android.synthetic.main.fragment_repo_list.*
 import org.jetbrains.anko.longToast

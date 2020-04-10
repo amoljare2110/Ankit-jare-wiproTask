@@ -1,8 +1,8 @@
 package com.ankit.jare.model.api
 
-import com.ankit.jare.view.utils.Constants.Companion.BASE_URL
-import com.ankit.jare.view.utils.Constants.Companion.DEBUG
-import com.ankit.jare.view.utils.Constants.Companion.REQUEST_TIMEOUT_DURATION
+import com.ankit.jare.utils.Constants.Companion.BASE_URL
+import com.ankit.jare.utils.Constants.Companion.DEBUG
+import com.ankit.jare.utils.Constants.Companion.REQUEST_TIMEOUT_DURATION
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
