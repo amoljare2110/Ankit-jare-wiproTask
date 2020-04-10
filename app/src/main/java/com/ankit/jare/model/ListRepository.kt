@@ -11,7 +11,7 @@ class ListRepository {
     // GET item list from API
     fun getRepoList(onResult: (isSuccess: Boolean, response: ListResponse?) -> Unit) {
         try {
-            ApiClient.instance.getRepo().enqueue(object : Callback<ListResponse> {
+            ApiClient.instance.getList().enqueue(object : Callback<ListResponse> {
                 override fun onResponse(call: Call<ListResponse>?, response: Response<ListResponse>?) {
                     if (response != null && response.isSuccessful)
                         onResult(true, response.body()!!)
