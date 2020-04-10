@@ -7,6 +7,7 @@ import com.ankit.jare.model.rows
 
 class RepoListViewModel : BaseViewModel() {
     val repoListLive = MutableLiveData<List<rows>>()
+    val respTitle = MutableLiveData<String>()
 
     fun fetchRepoList() {
         try {
@@ -14,6 +15,8 @@ class RepoListViewModel : BaseViewModel() {
             ListRepository.getInstance().getRepoList { isSuccess, response ->
                 dataLoading.value = false
                 if (isSuccess) {
+                    val title: String = response!!.title
+                    respTitle.value = response.title
                     repoListLive.value = response?.rows
                     empty.value = false
                 } else {
