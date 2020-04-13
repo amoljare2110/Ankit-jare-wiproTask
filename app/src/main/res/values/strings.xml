@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Wipro App</string>
+<string name="app_name">Wipro App</string>
+<string name="message">Data not available to display</string>
 </resources>

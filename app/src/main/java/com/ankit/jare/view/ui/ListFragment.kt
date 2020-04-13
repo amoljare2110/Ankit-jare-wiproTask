@@ -2,6 +2,7 @@ package com.ankit.jare.view.ui
 
 import android.graphics.drawable.ClipDrawable.HORIZONTAL
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,8 +17,10 @@ import com.ankit.jare.databinding.FragmentRepoListBinding
 import com.ankit.jare.view.adapter.ListAdapter
 import com.ankit.jare.utils.NetworkConnecitity
 import com.ankit.jare.viewmodel.RepoListViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_repo_list.*
 import org.jetbrains.anko.longToast
+import java.lang.NullPointerException
 
 class ListFragment : Fragment() {
 
@@ -61,13 +64,25 @@ class ListFragment : Fragment() {
 
     // Obervib=ng data from viewmodel to update UI
     private fun setupObservers() {
-        viewDataBinding.viewmodel?.repoListLive?.observe(viewLifecycleOwner, Observer {
-            adapter.updateRepoList(it)
-        })
+        try {
+            viewDataBinding.viewmodel?.repoListLive?.observe(viewLifecycleOwner, Observer {
+                adapter.updateRepoList(it)
+            })
 
-        viewDataBinding.viewmodel?.toastMessage?.observe(viewLifecycleOwner, Observer {
-            activity?.longToast(it)
-        })
+            viewDataBinding.viewmodel?.toastMessage?.observe(viewLifecycleOwner, Observer {
+                activity?.longToast(it)
+            })
+
+            viewDataBinding.viewmodel?.respTitle?.observe(viewLifecycleOwner, Observer {
+                if (it != null) {
+                    title.text = it
+                }
+
+            })
+        } catch (e: NullPointerException) {
+            e.printStackTrace()
+        }
+
     }
 
     // Swipe refresh api calling

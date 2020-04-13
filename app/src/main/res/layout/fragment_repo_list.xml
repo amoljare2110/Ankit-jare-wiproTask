@@ -8,16 +8,31 @@
         <variable
             name="viewmodel"
             type="com.ankit.jare.viewmodel.RepoListViewModel" />
+
     </data>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/colorRed"
+            android:fontFamily="Arial"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_10dp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_20sp"
+            android:textStyle="bold" />
+
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/itemsswipetorefresh"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_below="@+id/title"
             android:layout_marginStart="@dimen/_5dp"
             android:layout_marginEnd="@dimen/_5dp">
 
@@ -39,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="No repo to display"
+            android:text="@string/message"
             android:textSize="@dimen/_18sp"
             android:visibility="@{safeUnbox(viewmodel.empty) ? View.VISIBLE : View.GONE}" />
     </RelativeLayout>

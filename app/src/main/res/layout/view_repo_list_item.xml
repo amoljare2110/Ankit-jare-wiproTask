@@ -18,7 +18,7 @@
         android:layout_marginStart="@dimen/_5dp"
         android:layout_marginEnd="@dimen/_5dp"
         android:layout_marginBottom="@dimen/_5dp"
-        app:cardElevation="3dp">
+        app:cardElevation="@dimen/_3dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
