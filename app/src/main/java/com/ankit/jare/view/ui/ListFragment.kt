@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ankit.jare.R
 import com.ankit.jare.databinding.FragmentRepoListBinding
 import com.ankit.jare.view.adapter.ListAdapter
 import com.ankit.jare.utils.NetworkConnecitity
@@ -45,7 +46,7 @@ class ListFragment : Fragment() {
         if (NetworkConnecitity.isNetworkAvailable(requireContext())) {
             viewDataBinding.viewmodel?.fetchRepoList()
         } else {
-            Toast.makeText(requireContext(), "Network not available please check it.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.network_message), Toast.LENGTH_SHORT).show()
         }
 
         setupAdapter()
@@ -56,7 +57,7 @@ class ListFragment : Fragment() {
             if (NetworkConnecitity.isNetworkAvailable(requireContext())) {
                 swipeRefresh()
             } else {
-                Toast.makeText(requireContext(), "Network not available please check it.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.network_message), Toast.LENGTH_SHORT).show()
             }
         }
 

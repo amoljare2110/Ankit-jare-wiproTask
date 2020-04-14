@@ -1,4 +1,5 @@
 <resources>
-<string name="app_name">Wipro App</string>
-<string name="message">Data not available to display</string>
+    <string name="app_name">Wipro App</string>
+    <string name="message">Data not available to display</string>
+    <string name="network_message">Network not available please check it.</string>
 </resources>
