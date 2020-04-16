@@ -15,9 +15,11 @@ class RepoListViewModel : BaseViewModel() {
                 dataLoading.value = false
                 if (isSuccess) {
                     if (response != null) {
-                        respTitle.value = response.title
+                        if (response.rows.size > 0) {
+                            repoListLive.value = ArrayList(response.rows).apply { removeAt(7) }
+                            respTitle.value = response.title
+                        }
                     }
-                    repoListLive.value = response?.rows
                     empty.value = false
                 } else {
                     empty.value = true
