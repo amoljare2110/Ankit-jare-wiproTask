@@ -42,7 +42,7 @@
                     android:singleLine="false"
                     android:text="@{itemData.description}"
                     android:textColor="@color/darkBlue"
-                    android:textSize="@dimen/_20sp" />
+                    android:textSize="@dimen/_18sp" />
 
                 <ImageView
                     android:id="@+id/item_avatar"
