@@ -14,15 +14,10 @@ class RepoListViewModel : BaseViewModel() {
             ListRepository.getInstance().getRepoList { isSuccess, response ->
                 dataLoading.value = false
                 if (isSuccess) {
-                    if (response != null) {
-                        if (response.rows.size > 0) {
-                            repoListLive.value = ArrayList(response.rows).apply { removeAt(7) }
-                            respTitle.value = response.title
-                        }
+                    if (response != null && response.rows.size > 0) {
+                        repoListLive.value = ArrayList(response.rows).apply { removeAt(7) }
+                        respTitle.value = response.title
                     }
-                    empty.value = false
-                } else {
-                    empty.value = true
                 }
             }
         } catch (e: Exception) {

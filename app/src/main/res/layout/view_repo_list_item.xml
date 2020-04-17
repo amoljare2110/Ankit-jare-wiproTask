@@ -36,13 +36,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_5dp"
-                    android:fontFamily="Arial"
                     android:justificationMode="inter_word"
                     android:lineSpacingExtra="0.4dp"
                     android:singleLine="false"
+                    android:fontFamily="Arial"
                     android:text="@{itemData.description}"
                     android:textColor="@color/darkBlue"
-                    android:textSize="@dimen/_18sp" />
+                    android:textSize="@dimen/_20sp" />
 
                 <ImageView
                     android:id="@+id/item_avatar"
@@ -57,10 +57,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/item_description"
-                    android:fontFamily="Arial"
                     android:text="@{itemData.title}"
-                    android:textColor="@android:color/background_dark"
-                    android:textSize="@dimen/_14sp" />
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_18sp" />
 
             </RelativeLayout>
 

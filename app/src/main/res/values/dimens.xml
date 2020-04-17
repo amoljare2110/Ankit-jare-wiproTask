@@ -7,7 +7,7 @@
     <dimen name="_20dp">20dp</dimen>
     <dimen name="_10dp">10dp</dimen>
     <dimen name="_5dp">5dp</dimen>
-    <dimen name="_50dp">50dp</dimen>
+    <dimen name="_50dp">60dp</dimen>
     <dimen name="_3dp">3dp</dimen>
 
     <!--sp values-->
@@ -15,5 +15,6 @@
     <dimen name="_18sp">18sp</dimen>
     <dimen name="_16sp">16sp</dimen>
     <dimen name="_14sp">14sp</dimen>
+    <dimen name="_24sp">24sp</dimen>
 
 </resources>

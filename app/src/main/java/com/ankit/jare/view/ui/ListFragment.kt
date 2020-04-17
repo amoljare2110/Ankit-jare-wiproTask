@@ -2,7 +2,6 @@ package com.ankit.jare.view.ui
 
 import android.graphics.drawable.ClipDrawable.HORIZONTAL
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,9 +17,7 @@ import com.ankit.jare.databinding.FragmentRepoListBinding
 import com.ankit.jare.view.adapter.ListAdapter
 import com.ankit.jare.utils.NetworkConnecitity
 import com.ankit.jare.viewmodel.RepoListViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_repo_list.*
-import org.jetbrains.anko.longToast
 import java.lang.NullPointerException
 
 class ListFragment : Fragment() {
@@ -42,15 +39,20 @@ class ListFragment : Fragment() {
         val decoration = DividerItemDecoration(requireContext(), HORIZONTAL)
         repo_list_rv.addItemDecoration(decoration)
 
-        // Calling network status and call api for data
-        if (NetworkConnecitity.isNetworkAvailable(requireContext())) {
-            viewDataBinding.viewmodel?.fetchRepoList()
-        } else {
-            Toast.makeText(requireContext(), getString(R.string.network_message), Toast.LENGTH_SHORT).show()
+        try {
+            if (savedInstanceState == null) {
+                if (NetworkConnecitity.isNetworkAvailable(requireContext())) {
+                    viewDataBinding.viewmodel?.fetchRepoList()
+                } else {
+                    Toast.makeText(requireContext(), getString(R.string.network_message), Toast.LENGTH_SHORT).show()
+                    txtMessage.visibility = View.VISIBLE
+                }
+            }
+            setupAdapter()
+            setupObservers()
+        } catch (e: NullPointerException) {
+            e.printStackTrace()
         }
-
-        setupAdapter()
-        setupObservers()
 
         // swipe refresh listener
         itemsswipetorefresh.setOnRefreshListener {
@@ -58,6 +60,8 @@ class ListFragment : Fragment() {
                 swipeRefresh()
             } else {
                 Toast.makeText(requireContext(), getString(R.string.network_message), Toast.LENGTH_SHORT).show()
+                txtMessage.visibility = View.VISIBLE
+                itemsswipetorefresh.isRefreshing = false
             }
         }
 
@@ -68,10 +72,6 @@ class ListFragment : Fragment() {
         try {
             viewDataBinding.viewmodel?.repoListLive?.observe(viewLifecycleOwner, Observer {
                 adapter.updateRepoList(it)
-            })
-
-            viewDataBinding.viewmodel?.toastMessage?.observe(viewLifecycleOwner, Observer {
-                activity?.longToast(it)
             })
 
             viewDataBinding.viewmodel?.respTitle?.observe(viewLifecycleOwner, Observer {
