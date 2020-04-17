@@ -52,4 +52,9 @@ dependencies {
 
     implementation 'junit:junit:4.12'
     implementation 'org.mockito:mockito-android:2.7.22'
+
+    implementation "com.google.dagger:dagger-android:2.16"
+
+    kapt "com.google.dagger:dagger-compiler:2.16"
+    kapt "com.google.dagger:dagger-android-processor:2.16"
 }

@@ -16,16 +16,23 @@ import com.ankit.jare.R
 import com.ankit.jare.databinding.FragmentRepoListBinding
 import com.ankit.jare.view.adapter.ListAdapter
 import com.ankit.jare.utils.NetworkConnecitity
+import com.ankit.jare.viewmodel.BaseViewModel
 import com.ankit.jare.viewmodel.RepoListViewModel
+import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.fragment_repo_list.*
 import java.lang.NullPointerException
+import javax.inject.Inject
 
 class ListFragment : Fragment() {
+
+    @Inject
+    lateinit var viewModel: BaseViewModel
 
     private lateinit var viewDataBinding: FragmentRepoListBinding
     private lateinit var adapter: ListAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        AndroidInjection.inject(this.activity)
         viewDataBinding = FragmentRepoListBinding.inflate(inflater, container, false).apply {
             viewmodel = ViewModelProviders.of(this@ListFragment).get(RepoListViewModel::class.java)
             setLifecycleOwner(viewLifecycleOwner)
