@@ -9,5 +9,6 @@ class DataSuccess {
         ListRepository.getInstance().getRepoList { isSuccess, response ->
             Assert.assertTrue("Response Succesfull:", isSuccess)
         }
+
     }
 }

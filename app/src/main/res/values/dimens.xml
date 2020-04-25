@@ -1,10 +1,6 @@
 <resources>
-    <dimen name="avatar_size">30dp</dimen>
 
     <!--dp values-->
-    <dimen name="_25dp">25dp</dimen>
-    <dimen name="_35dp">35dp</dimen>
-    <dimen name="_20dp">20dp</dimen>
     <dimen name="_10dp">10dp</dimen>
     <dimen name="_5dp">5dp</dimen>
     <dimen name="_50dp">60dp</dimen>
@@ -13,8 +9,9 @@
     <!--sp values-->
     <dimen name="_20sp">20sp</dimen>
     <dimen name="_18sp">18sp</dimen>
-    <dimen name="_16sp">16sp</dimen>
     <dimen name="_14sp">14sp</dimen>
-    <dimen name="_24sp">24sp</dimen>
+
+    <dimen name="_150dp">150dp</dimen>
+    <dimen name="_100dp">100dp</dimen>
 
 </resources>

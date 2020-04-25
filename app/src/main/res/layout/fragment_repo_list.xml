@@ -17,16 +17,7 @@
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_50dp"
-            android:layout_gravity="center_vertical"
-            android:background="@color/colorRed"
-            android:fontFamily="Arial"
-            android:gravity="center_vertical"
-            android:paddingStart="@dimen/_10dp"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/_24sp"
-            android:textStyle="bold" />
+            style="@style/TitleTextViewStyle" />
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/itemsswipetorefresh"

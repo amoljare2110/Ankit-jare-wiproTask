@@ -12,7 +12,48 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="TitleTextViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_50dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:fontFamily">Arial</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/_20sp</item>
+        <item name="android:paddingStart">@dimen/_10dp</item>
+        <item name="android:background">@color/colorRed</item>
+    </style>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="ListDescriptionTextViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/_5dp</item>
+        <item name="android:fontFamily">Arial</item>
+        <item name="android:justificationMode">inter_word</item>
+        <item name="android:lineSpacingExtra">0.4dp</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:textSize">@dimen/_18sp</item>
+        <item name="android:textColor">@color/darkBlue</item>
+    </style>
+
+    <style name="ListTitleTextViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">Arial</item>
+        <item name="android:justificationMode">inter_word</item>
+        <item name="android:lineSpacingExtra">0.4dp</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:textSize">@dimen/_14sp</item>
+        <item name="android:textColor">@android:color/background_dark</item>
+    </style>
+
+    <style name="ArrowButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/ic_right</item>
+    </style>
+
 </resources>

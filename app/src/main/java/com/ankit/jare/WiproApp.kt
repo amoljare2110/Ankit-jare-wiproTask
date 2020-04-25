@@ -17,8 +17,8 @@ class WiproApp : Application(), HasActivityInjector {
         super.onCreate()
         instance = this
 
-        var appComponent = DaggerAppComponent.create()
-        appComponent.Inject(this)
+        val appComponent = DaggerAppComponent.create()
+        appComponent.inject(this)
     }
 
     companion object {

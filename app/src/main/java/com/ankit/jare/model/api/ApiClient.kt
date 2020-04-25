@@ -1,7 +1,6 @@
 package com.ankit.jare.model.api
 
 import com.ankit.jare.utils.Constants.Companion.BASE_URL
-import com.ankit.jare.utils.Constants.Companion.DEBUG
 import com.ankit.jare.utils.Constants.Companion.REQUEST_TIMEOUT_DURATION
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
@@ -34,21 +33,12 @@ object ApiClient {
             chain.proceed(request)
         }
 
-        return if (DEBUG) {
-            OkHttpClient.Builder()
-                    .addInterceptor(interceptor)
-                    .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
-                    .connectTimeout(REQUEST_TIMEOUT_DURATION.toLong(), TimeUnit.SECONDS)
-                    .readTimeout(REQUEST_TIMEOUT_DURATION.toLong(), TimeUnit.SECONDS)
-                    .writeTimeout(REQUEST_TIMEOUT_DURATION.toLong(), TimeUnit.SECONDS)
-                    .build()
-        } else {
-            OkHttpClient.Builder()
-                    .addInterceptor(interceptor)
-                    .connectTimeout(REQUEST_TIMEOUT_DURATION.toLong(), TimeUnit.SECONDS)
-                    .readTimeout(REQUEST_TIMEOUT_DURATION.toLong(), TimeUnit.SECONDS)
-                    .writeTimeout(REQUEST_TIMEOUT_DURATION.toLong(), TimeUnit.SECONDS)
-                    .build()
-        }
+        return OkHttpClient.Builder()
+                .addInterceptor(interceptor)
+                .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                .connectTimeout(REQUEST_TIMEOUT_DURATION.toLong(), TimeUnit.SECONDS)
+                .readTimeout(REQUEST_TIMEOUT_DURATION.toLong(), TimeUnit.SECONDS)
+                .writeTimeout(REQUEST_TIMEOUT_DURATION.toLong(), TimeUnit.SECONDS)
+                .build()
     }
 }

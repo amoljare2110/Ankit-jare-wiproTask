@@ -10,5 +10,5 @@ import dagger.Component
 )
 
 interface AppComponent {
-    fun Inject(wiproApp: WiproApp)
+    fun inject(wiproApp: WiproApp)
 }
