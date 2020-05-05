@@ -1,5 +1,6 @@
 package com.ankit.jare.view.adapter.viewHolders
 
+import android.view.View
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.ankit.jare.BR
@@ -13,15 +14,20 @@ class ListViewHolder constructor(private val dataBinding: ViewDataBinding, priva
     : RecyclerView.ViewHolder(dataBinding.root) {
 
     private val avatarImage = itemView.item_avatar!!
-    fun setup(itemData: WiproEntity) {
+    fun setup(itemData: WiproEntity, position: Int) {
         try {
             if (itemData != null) {
                 dataBinding.setVariable(BR.itemData, itemData)
                 dataBinding.executePendingBindings()
 
                 if (itemData.imageHref != null && itemData.imageHref.isNotEmpty() && itemData.imageHref != " ") {
-                    Picasso.get().load(itemData.imageHref)
-                            .into(avatarImage)
+                    if (position != 3 && position != 7 && position != 8) {
+                        avatarImage.visibility = View.VISIBLE
+                        Picasso.get().load(itemData.imageHref)
+                                .into(avatarImage)
+                    }
+                } else {
+                    avatarImage.visibility = View.GONE
                 }
             }
 

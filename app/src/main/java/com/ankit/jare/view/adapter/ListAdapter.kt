@@ -20,7 +20,7 @@ class ListAdapter(private val repoListViewModel: RepoListViewModel) : RecyclerVi
     override fun getItemCount() = repoList.size
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        holder.setup(repoList[position])
+        holder.setup(repoList[position],position)
     }
 
     fun updateRepoList(repoList: List<WiproEntity>) {

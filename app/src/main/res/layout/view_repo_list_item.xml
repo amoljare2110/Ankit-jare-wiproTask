@@ -34,30 +34,39 @@
                 <TextView
                     android:id="@+id/item_description"
                     style="@style/ListDescriptionTextViewStyle"
-                    android:text="@{itemData.description}" />
-
-                <ImageView
-                    android:id="@+id/item_avatar"
-                    android:layout_width="@dimen/_150dp"
-                    android:layout_height="@dimen/_100dp"
-                    android:layout_below="@+id/item_description"
-                    android:layout_alignParentEnd="true"
-                    android:contentDescription="@string/app_name"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitXY" />
-
-                <TextView
-                    android:id="@+id/item_name"
-                    style="@style/ListTitleTextViewStyle"
-                    android:layout_below="@+id/item_description"
                     android:text="@{itemData.title}" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/item_description">
+
+                    <ImageView
+                        android:id="@+id/item_avatar"
+                        android:layout_width="@dimen/_150dp"
+                        android:layout_height="@dimen/_100dp"
+                        android:layout_alignParentEnd="true"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="fitXY"
+                        android:layout_marginTop="@dimen/_5dp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/item_name"
+                        style="@style/ListTitleTextViewStyle"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/item_avatar"
+                        android:text="@{itemData.description}" />
+
+                </RelativeLayout>
 
             </RelativeLayout>
 
             <ImageView
                 android:id="@+id/img_arrow"
-                android:contentDescription="@string/app_name"
-                style="@style/ArrowButtonStyle" />
+                style="@style/ArrowButtonStyle"
+                android:contentDescription="@string/app_name" />
 
         </RelativeLayout>
 
