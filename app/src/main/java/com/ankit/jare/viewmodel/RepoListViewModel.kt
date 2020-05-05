@@ -40,7 +40,7 @@ class RepoListViewModel : BaseViewModel() {
                 if (response != null) {
 
                     for (i in response.rows.indices) {
-                        if (i != 7) {
+                        if (i != 7 && i != 10) {
                             if (response.rows[i].title == null) {
                                 wiproEntity.title = " "
                             } else {
