@@ -21,10 +21,8 @@ class ListViewHolder constructor(private val dataBinding: ViewDataBinding, priva
                 dataBinding.setVariable(BR.itemData, itemData)
                 dataBinding.executePendingBindings()
 
-                if (itemData.imageHref != null && itemData.imageHref.isNotEmpty() && itemData.imageHref != " ") {
+                if (itemData.imageHref != null && itemData.imageHref.isNotEmpty() && itemData.imageHref != " " && itemData.description != "Geography") {
                     Picasso.get().load(itemData.imageHref)
-                            .memoryPolicy(MemoryPolicy.NO_CACHE)
-                            .networkPolicy(NetworkPolicy.NO_CACHE)
                             .into(avatarImage)
                 }
             }

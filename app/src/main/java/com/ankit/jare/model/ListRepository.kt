@@ -5,8 +5,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.lang.NullPointerException
+import javax.inject.Inject
 
-class ListRepository {
+class ListRepository @Inject constructor() {
 
     // GET item list from API
     fun getRepoList(onResult: (isSuccess: Boolean, response: ListResponse?) -> Unit) {
